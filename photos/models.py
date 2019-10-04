@@ -21,3 +21,15 @@ class Category(models.Model):
     
       
    
+class Image(models.Model):
+    image_path = models.ImageField(upload_to = 'images/')
+    image_name = models.CharField(max_length = 30)
+    image_description = models.TextField()
+    
+    
+    def __str__(self):
+        return self.image_name
+    
+    
+    class Meta:
+        ordering = ['image_name']
