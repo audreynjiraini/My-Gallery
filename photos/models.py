@@ -21,7 +21,13 @@ class Location(models.Model):
         '''
         
         self.delete()
-   
+        
+        
+    def update_location(self, test):
+        '''
+          Method to update the location in the database.
+        '''
+        self.update(name = test)
     
     
     def __str__(self):
@@ -47,7 +53,13 @@ class Category(models.Model):
         '''
         
         self.delete()
-    
+        
+        
+    def update_category(self, test):
+        '''
+          Method to update the category in the database.
+        '''
+        self.update(name = test)
     
     
     def __str__(self):
@@ -75,7 +87,13 @@ class Image(models.Model):
         '''
         
         self.delete()
-   
+        
+        
+    def update_image(self, test):
+        '''
+          Method to update the image in the database.
+        '''
+        self.update(name = test)
         
     
     class Meta:
