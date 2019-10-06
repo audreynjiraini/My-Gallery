@@ -27,7 +27,7 @@ class LocationTestClass(TestCase):
         
     def test_save_method(self):
         '''
-        Test whetherthe object is saved in the database.
+        Test whether the object is saved in the database.
         '''
         
         self.location.save_location()
@@ -76,4 +76,35 @@ class CategoryTestClass(TestCase):
         
         self.assertTrue(isinstance(self.category, Category))
         
+      
+    def test_save_method(self):
+        '''
+        Test whether the object is saved in the database.
+        '''
         
+        self.category.save_category()
+        categories = Category.objects.all()
+        self.assertTrue(len(categories) > 0)
+        
+        
+    def test_update_method(self):
+        '''
+        Test if the object can be updated.
+        '''
+        self.category.save_category()
+        self.category = Category.objects.filter(name = 'IDK').update(name = 'IK')
+        self.updated_category = Category.objects.get(name = 'IK')
+        self.assertEqual(self.updated_category.name,"IK")
+
+
+    def test_delete_method(self):
+        '''
+        Test if the object can be deleted from the database.
+        '''
+        self.category.save_category()
+        self.category = Category.objects.get(id = 50)
+        self.category.delete_category()
+        self.assertTrue(len(Category.objects.all()) == 0)
+        
+        
+         
