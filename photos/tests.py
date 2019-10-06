@@ -53,3 +53,27 @@ class LocationTestClass(TestCase):
         self.location = Location.objects.get(id = 50)
         self.location.delete_location()
         self.assertTrue(len(Location.objects.all()) == 0)
+        
+        
+        
+class CategoryTestClass(TestCase):
+    '''
+    Tests for Category class.
+    '''
+    
+    def setUp(self):
+        '''
+        Runs before each test.
+        '''
+        
+        self.category = Category(id = 50, name = 'IDK')
+        
+        
+    def test_instance(self):
+        '''
+        Checks if object is an instance of the Category class.
+        '''
+        
+        self.assertTrue(isinstance(self.category, Category))
+        
+        
