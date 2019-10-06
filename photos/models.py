@@ -9,10 +9,19 @@ class Location(models.Model):
     
     def save_location(self):
         '''
-        Method to save location to the database
+        Method to save location to the database.
         '''
         
         self.save()
+        
+    
+    def delete_location(self):
+        '''
+        Method to delete location from the database.
+        '''
+        
+        self.delete()
+   
     
     
     def __str__(self):
@@ -26,10 +35,19 @@ class Category(models.Model):
     
     def save_category(self):
         '''
-        Method to save category to the database
+        Method to save category to the database.
         '''
         
         self.save()
+        
+    
+    def delete_category(self):
+        '''
+        Method to delete category from the database.
+        '''
+        
+        self.delete()
+    
     
     
     def __str__(self):
@@ -45,10 +63,19 @@ class Image(models.Model):
     
     def save_image(self):
         '''
-        Method to save image to the database
+        Method to save image to the database.
         '''
         
         self.save()
+        
+    
+    def delete_image(self):
+        '''
+        Method to delete image from the database.
+        '''
+        
+        self.delete()
+   
         
     
     class Meta:
