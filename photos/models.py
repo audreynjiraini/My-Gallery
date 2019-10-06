@@ -124,6 +124,15 @@ class Image(models.Model):
         '''
         images = cls.objects.all()
         return images
+    
+    
+    @classmethod
+    def get_image_by_id(cls,id):
+        '''
+          Method tto retrieve an image based on its id.
+        '''
+        image = cls.objects.get(id = id)
+        return image
         
     
     class Meta:
