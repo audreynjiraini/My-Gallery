@@ -133,6 +133,16 @@ class Image(models.Model):
         '''
         image = cls.objects.get(id = id)
         return image
+    
+    
+    @classmethod
+    def filter_by_location(cls,search_term):
+        '''
+          Method to filter images based on the location they were taken.
+        '''
+        location = Location.objects.get(name = search_term)
+        images = cls.objects.filter(location = location)
+        return images
         
     
     class Meta:
