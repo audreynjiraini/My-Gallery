@@ -80,8 +80,8 @@ class Image(models.Model):
     image_path = models.ImageField(upload_to = 'images/')
     image_name = models.CharField(max_length = 30)
     image_description = models.TextField()
-    category = models.ForeignKey(Category)
     location = models.ForeignKey(Location)
+    category = models.ForeignKey(Category)
     
     
     def save_image(self):
@@ -105,6 +105,15 @@ class Image(models.Model):
           Method to update the image in the database.
         '''
         self.update(name = test)
+    
+    
+    @classmethod
+    def get_image_by_id(cls,id):
+        '''
+          Method tto retrieve an image based on its id.
+        '''
+        image = cls.objects.get(id = id)
+        return image
         
         
     @classmethod
@@ -115,25 +124,7 @@ class Image(models.Model):
         images = cls.objects.filter(category__name__icontains = search_term)
         
         return images
-    
-    
-    @classmethod
-    def get_all_images(cls):
-        '''
-          Method to return all the images.
-        '''
-        images = cls.objects.all()
-        return images
-    
-    
-    @classmethod
-    def get_image_by_id(cls,id):
-        '''
-          Method tto retrieve an image based on its id.
-        '''
-        image = cls.objects.get(id = id)
-        return image
-    
+        
     
     @classmethod
     def filter_by_location(cls,search_term):
@@ -142,6 +133,15 @@ class Image(models.Model):
         '''
         location = Location.objects.get(name = search_term)
         images = cls.objects.filter(location = location)
+        return images
+    
+    
+    @classmethod
+    def get_all_images(cls):
+        '''
+          Method to return all the images.
+        '''
+        images = cls.objects.all()
         return images
         
     
