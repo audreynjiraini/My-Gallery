@@ -181,3 +181,12 @@ class ImageTestClass(TestCase):
         self.category.save_category()
         self.searched_images = Image.search_by_category('IDK')
         self.assertTrue(len(self.searched_images) > 0)
+        
+        
+    def test_filter_by_location(self):
+        '''
+        Test whether images can be filtered based on their location.
+        '''
+        self.image.save_image()
+        self.searched_images = Image.filter_by_location('Kenya')
+        self.assertTrue(len(self.searched_images) > 0)
