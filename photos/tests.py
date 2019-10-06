@@ -118,12 +118,12 @@ class ImageTestClass(TestCase):
         Runs before each test.
         '''
         
-        self.image = Image(id = 50, image_path = 'image/location', image_name = 'Test Image', image_description = 'Testing the setUp of an image', location = self.location, category = self.category)
-        
         self.location = Location(name = 'Kenya')
         self.location.save_location()
         self.category = Category(name = 'IDK')
         self.category.save_category()
+        
+        self.image = Image(id = 50, image_path = 'image/location', image_name = 'Test Image', image_description = 'Testing the setUp of an image', location = self.location, category = self.category)
         
         
     def test_instance(self):
@@ -161,3 +161,12 @@ class ImageTestClass(TestCase):
         self.searched_image = Image.get_image_by_id(50)
         self.searched_image.delete_image()
         self.assertTrue(len(Image.objects.all()) == 0)
+        
+        
+    def test_get_image_by_id(self):
+        '''
+        Test whether a specific image can be retrieved from the database using its id.
+        '''
+        self.image.save_image()
+        self.image = Image.get_image_by_id(50)
+        self.assertTrue(isinstance(self.image,Image))
