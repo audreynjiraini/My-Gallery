@@ -28,6 +28,15 @@ class Location(models.Model):
           Method to update the location in the database.
         '''
         self.update(name = test)
+        
+    
+    @classmethod
+    def get_all_locations(cls):
+        '''
+          Method to return all the locations.
+        '''
+        locations = cls.objects.all()
+        return locations
     
     
     def __str__(self):
@@ -105,6 +114,15 @@ class Image(models.Model):
         '''
         images = cls.objects.filter(category__name__icontains = search_term)
         
+        return images
+    
+    
+    @classmethod
+    def get_all_images(cls):
+        '''
+          Method to return all the images.
+        '''
+        images = cls.objects.all()
         return images
         
     

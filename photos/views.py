@@ -6,8 +6,8 @@ from .models import Image, Location, Category
 # Create your views here.
 
 def welcome(request):
-    images = Image.objects.all()
-    locations = Location.objects.all()
+    images = Image.get_all_images()
+    locations = Location.get_all_locations()
     
     return render(request, 'welcome.html', {'images': images, 'locations': locations})
 
