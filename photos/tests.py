@@ -134,4 +134,30 @@ class ImageTestClass(TestCase):
         self.assertTrue(isinstance(self.image, Image))
         
     
-    
+    def test_save_image(self):
+        '''
+        Test whether the object is saved in the database.
+        '''
+        self.image.save_image()
+        self.images = Image.objects.all()
+        self.assertTrue(len(self.images) > 0)
+        
+        
+    def test_update_image(self):
+        '''
+        Test whether the object can be updated.
+        '''
+        self.image.save_image()
+        self.image = Image.objects.filter(id = 50).update(image_path = "new/image/location")
+        self.updated_image = Image.get_image_by_id(50)
+        self.assertEqual(self.updated_image.image_path,"new/image/location")
+        
+        
+    def test_delete_image(self):
+        '''
+        Test case to see if the object can be deleted from the database.
+        '''
+        self.image.save_image()
+        self.searched_image = Image.get_image_by_id(50)
+        self.searched_image.delete_image()
+        self.assertTrue(len(Image.objects.all()) == 0)
