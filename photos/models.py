@@ -95,6 +95,16 @@ class Image(models.Model):
         '''
         self.update(name = test)
         
+        
+    @classmethod
+    def search_by_category(cls,search_term):
+        '''
+          Method to search for images based on their category.
+        '''
+        images = cls.objects.filter(category__name__icontains = search_term)
+        
+        return images
+        
     
     class Meta:
         ordering = ['image_name']
