@@ -170,3 +170,14 @@ class ImageTestClass(TestCase):
         self.image.save_image()
         self.image = Image.get_image_by_id(50)
         self.assertTrue(isinstance(self.image,Image))
+        
+        
+    def test_search_by_category(self):
+        '''
+        Test whether images can be searched based on their category.
+        '''
+        self.image.save_image()
+        self.category = Category(name = "IDK")
+        self.category.save_category()
+        self.searched_images = Image.search_by_category('IDK')
+        self.assertTrue(len(self.searched_images) > 0)
