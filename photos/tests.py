@@ -108,3 +108,30 @@ class CategoryTestClass(TestCase):
         
         
          
+class ImageTestClass(TestCase):
+    '''
+    Tests for Image class.
+    '''
+    
+    def setUp(self):
+        '''
+        Runs before each test.
+        '''
+        
+        self.image = Image(id = 50, image_path = 'image/location', image_name = 'Test Image', image_description = 'Testing the setUp of an image', location = self.location, category = self.category)
+        
+        self.location = Location(name = 'Kenya')
+        self.location.save_location()
+        self.category = Category(name = 'IDK')
+        self.category.save_category()
+        
+        
+    def test_instance(self):
+        '''
+        Checks if object is an instance of the Image class.
+        '''
+        
+        self.assertTrue(isinstance(self.image, Image))
+        
+    
+    
