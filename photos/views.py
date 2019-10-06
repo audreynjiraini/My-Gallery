@@ -24,3 +24,10 @@ def search_results(request):
         message = "You haven't searched for any category"
         
         return render(request, 'search.html', {"message":message})
+    
+    
+def location(request,location):
+    selected_location = Location.objects.get(id = location)
+    images = Image.objects.filter(location = selected_location.id)
+    
+    return render(request, 'location.html', {"location":selected_location,"images":images})

@@ -7,7 +7,7 @@
 <div class="container-fluid">
     {% for image in images %}
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <a><img src="{{ image.image_path.url }}" class="img-responsive" alt="{{ image.image_name }}"></a>
+        <a><img src="{{ image.image_path.url }}" class="img-responsive" alt="{{ image.image_name }}" data-toggle="modal" data-target="#{{image.id}}"></a>
     </div>
     {% endfor %}
 
@@ -15,8 +15,7 @@
         {% for image in images %}
 
         <!-- Modal -->
-        <div class="modal fade" id="centralModalLg {{ image.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-            aria-hidden="true">
+        <div class="modal fade" id="centralModalLg {{ image.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
 
                 <div class="modal-content">
