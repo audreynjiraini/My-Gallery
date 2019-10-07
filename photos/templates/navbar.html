@@ -1,8 +1,24 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-expand">
   <div class="container-fluid">
       
-    <div class="navbar-header">
-      <a class="navbar-brand" href="{% url 'welcome' %}">My Gallery</a>
+    <div class="navbar-header navbar-nav-scroll">
+      <a class="navbar-brand" href="{% url 'welcome' %}">My Gallery<span class="sr-only">(current)</a>
+        <div class="">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link navbar-brand" href="{% url 'location' 3 %}">Bali</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-brand" href="{% url 'location' 2 %}">Greece</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-brand" href="{% url 'location' 4 %}">Thailand</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-brand" href="{% url 'location' 1 %}">Unknown</a>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <!-- Adding a search form  -->

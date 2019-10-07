@@ -3,6 +3,14 @@
 {% block content %}
 {{block.super}}
 
+<!-- Welcome message -->
+<div class="container">
+    <p>This is a gallery application that displays photos.</p>
+    <p>There are different categories such as travel and food for you to view pictures.</p>
+    <p>Hope you enjoy!</p>
+</div>
+<br>
+
 <!--Display images  -->
 <div class="container-fluid">
     {% for image in images %}
