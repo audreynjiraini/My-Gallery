@@ -30,7 +30,9 @@ This is a personal gallery application that displays photos for others to see.
 <ol>
     <li>Navigate to https://github.com/audreynjiraini/My-Gallery .</li>
     <li>Clone the project.</li>
-    ```git clone https://github.com/audreynjiraini/My-Gallery.git```
+    ```sh
+    git clone https://github.com/audreynjiraini/My-Gallery.git
+    ```
     <li>On your machine, open the project folder in your terminal.</li>
     <li>Create a virtual environment</li>
     ```python3 -m venv virtual```
