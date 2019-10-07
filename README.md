@@ -40,9 +40,8 @@ This is a personal gallery application that displays photos for others to see.
     ```pip install -r requirements.txt```
     <li>In gallery/settings.py file, ensure that DEBUG=True.</li>
     <li>Run the server</li>
-    ```python3 manage.py runserver```
+    `python3 manage.py runserver`
 </ol>
-    ```python3 manage.py runserver```
 
 ## Known Bugs
 The modal displaying image details appears and disappears immediately making it appear as if it is not present.
