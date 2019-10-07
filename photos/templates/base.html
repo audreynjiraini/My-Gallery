@@ -28,7 +28,10 @@
     {%endblock%}
 
     {% block scripts %}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+       <script type="text/javascript">function copyToClipboard(element) {var myVar = document.getElementById(element);myVar.select();document.execCommand("copy");}</script>
+
         {% bootstrap_javascript %}
     {% endblock %}
 

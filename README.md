@@ -1,7 +1,10 @@
-# Blog
+# My-Gallery
+
+#### 4 October 2019
+By Audrey Njiraini
 
 ## Overall Project Description
-This is a personal gallery application that allows you to display your photos for others to see.
+This is a personal gallery application that displays photos for others to see.
 
 ## User stories
 <ol>
@@ -13,12 +16,12 @@ This is a personal gallery application that allows you to display your photos fo
 
 </ol>
 
-#### 4 October 2019
-By Audrey Njiraini
 
 ## Setup/Installation Requirements
-* Python version 3.6
+* Python version 3
+* pip
 * Django
+* Django-bootstrap3
 * Heroku
 * Gunicorn
 * Internet connection
@@ -27,15 +30,35 @@ By Audrey Njiraini
 <ol>
     <li>Navigate to https://github.com/audreynjiraini/My-Gallery .</li>
     <li>Clone the project.</li>
+    ```
+    git clone https://github.com/audreynjiraini/My-Gallery.git
+    ```
     <li>On your machine, open the project folder in your terminal.</li>
+    <li>Create a virtual environment</li>
+    ```
+    python3 -m venv virtual
+    ```
+    <li>Activate the virtual environment</li>
+    ```
+    source virtual/bin/activate
+    ```
+    <li>Install the requirements</li>
+    ```
+    pip install -r requirements.txt
+    ```
+    <li>In gallery/settings.py file, ensure that DEBUG=True.</li>
+    <li>Run the server</li>
+    ```
+    python3 manage.py runserver
+    ```
 </ol>
 
 ## Known Bugs
-No known bugs.
+The modal displaying image details appears and disappears immediately making it appear as if it is not present.
 
 ## Contact Information
 If you need clarification on any aspect, feel free to reach me via email at audreynjiraini@gmail.com
 
 ### License
-MIT License
+MIT License [MIT](license.txt)
 Copyright (c) 2019 Audrey Njiraini

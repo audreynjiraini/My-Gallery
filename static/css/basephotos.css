@@ -2,3 +2,18 @@ h1
 {
   color: green;
 }
+
+@media only screen and (max-width: 576px) {
+    .grid-item {
+        width: 100%;
+    }
+    .btn-sm-block {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+    .grid-item {
+        width: 50%;
+    }
+}
