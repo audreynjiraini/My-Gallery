@@ -30,9 +30,7 @@ This is a personal gallery application that displays photos for others to see.
 <ol>
     <li>Navigate to https://github.com/audreynjiraini/My-Gallery .</li>
     <li>Clone the project.</li>
-    ```sh
-    git clone https://github.com/audreynjiraini/My-Gallery.git
-    ```
+    ```git clone https://github.com/audreynjiraini/My-Gallery.git```
     <li>On your machine, open the project folder in your terminal.</li>
     <li>Create a virtual environment</li>
     ```python3 -m venv virtual```
@@ -44,6 +42,7 @@ This is a personal gallery application that displays photos for others to see.
     <li>Run the server</li>
     ```python3 manage.py runserver```
 </ol>
+    ```python3 manage.py runserver```
 
 ## Known Bugs
 The modal displaying image details appears and disappears immediately making it appear as if it is not present.
